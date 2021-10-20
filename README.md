@@ -7,14 +7,17 @@ Template for a full-blown Vaadin application that only requires a Servlet 3.0 co
 Project Structure
 =================
 
-The project consists of the following three modules:
+The project consists of the following four modules:
 
 - parent project: common metadata and configuration
-- myapplication-widgetset: widgetset, custom client side code and dependencies to widget add-ons
-- myapplication-ui: main application module, development time
+- myapplication-widgetset: widgetset, custom client side code and dependencies to widget add-ons, Java 6
+- myapplication-ui: main application module, development time, MVP pattern, Push, Java 8
+- myapplication-backend: mock database, mocked delays for operations, Java 8
 - myapplication-production: module that produces a production mode WAR for deployment
 
 The production mode module recompiles the widgetset (obfuscated, not draft), activates production mode for Vaadin with a context parameter in web.xml and contains a precompiled theme. The ui module WAR contains an unobfuscated widgetset, and is meant to be used at development time only.
+
+Note, Vaadin 7 versions after 7.7.17 require commercial license from Vaadin
 
 Workflow
 ========
