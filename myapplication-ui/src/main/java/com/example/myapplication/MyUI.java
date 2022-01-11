@@ -40,7 +40,7 @@ import com.vaadin.ui.themes.ValoTheme;
  * mobile devices. Instead of device based scaling (default), using responsive
  * layouts.
  */
-@Push(transport = Transport.WEBSOCKET_XHR)
+@Push //(transport = Transport.WEBSOCKET_XHR)
 @Viewport("user-scalable=no,initial-scale=1.0")
 @Theme("mytheme")
 @Widgetset("com.example.myapplication.MyAppWidgetset")
