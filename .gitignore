@@ -1,0 +1,8 @@
+myapplication-ui/lib/
+myapplication-ui/target/
+myapplication-widgetset/target/
+myapplication-backend/target/
+myapplication-backend/.settings/
+myapplication-production/.settings/
+myapplication-ui/.settings/
+myapplication-widgetset/.settings/
