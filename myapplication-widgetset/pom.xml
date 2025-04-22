@@ -18,7 +18,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<vaadin.gwt.version>2.9.0</vaadin.gwt.version>
+		<!-- <vaadin.gwt.version>2.9.0</vaadin.gwt.version> -->
 	</properties>
 
 	<dependencies>
@@ -28,7 +28,7 @@
 			<artifactId>vaadin-client</artifactId>
 			<version>${vaadin.version}</version>
 			<scope>provided</scope>
-			<exclusions>
+			<!-- <exclusions>
 				<exclusion>
 					<groupId>com.vaadin.external.gwt</groupId>
 					<artifactId>gwt-dev</artifactId>
@@ -37,14 +37,14 @@
 					<groupId>com.vaadin.external.gwt</groupId>
 					<artifactId>gwt-elemental</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client-compiler</artifactId>
 			<version>${vaadin.version}</version>
 			<scope>provided</scope>
-			<exclusions>
+			<!-- <exclusions>
 				<exclusion>
 					<groupId>com.vaadin.external.gwt</groupId>
 					<artifactId>gwt-dev</artifactId>
@@ -53,9 +53,9 @@
 					<groupId>com.vaadin.external.gwt</groupId>
 					<artifactId>gwt-elemental</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-dev</artifactId>
 			<version>${vaadin.gwt.version}</version>
@@ -78,7 +78,7 @@
 			<artifactId>gwt-elemental</artifactId>
 			<version>${vaadin.gwt.version}</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>
@@ -100,12 +100,12 @@
 					<execution>
 						<goals>
 							<goal>update-widgetset</goal>
-							<!-- <goal>compile</goal> -->
+							<goal>compile</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
 				<version>${vaadin.gwt.version}</version>
@@ -120,7 +120,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>

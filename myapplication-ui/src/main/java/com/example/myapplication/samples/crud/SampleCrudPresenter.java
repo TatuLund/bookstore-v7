@@ -52,7 +52,9 @@ public class SampleCrudPresenter implements Serializable {
         if (!MyUI.get().getAccessControl().isUserInRole("admin")) {
             view.setNewProductEnabled(false);
         }
+    }
 
+    public void requestProducts() {
         loadProductsAsync().thenAccept(prod -> {
             view.showProductsAsync(prod);
         });

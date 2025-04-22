@@ -1,5 +1,7 @@
 package com.example.myapplication.samples.about;
 
+import java.util.Date;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
@@ -26,7 +28,8 @@ public class AboutView extends VerticalLayout implements View {
 
         setSizeFull();
         setStyleName("about-view");
-        addComponent(aboutContent);
+
+        addComponents(aboutContent);
         setComponentAlignment(aboutContent, Alignment.MIDDLE_CENTER);
     }
 

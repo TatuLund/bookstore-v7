@@ -46,9 +46,6 @@ public class SampleCrudView extends CssLayout implements View {
                 event -> presenter.rowSelected(grid.getSelectedRow()));
 
         form = new ProductForm(presenter);
-        presenter.loadCategoriesAsync().thenAccept(categories -> {
-            getUI().access(() -> form.setCategories(categories));
-        });
 
         VerticalLayout barAndGridLayout = new VerticalLayout();
         barAndGridLayout.addComponent(topLayout);
@@ -92,6 +89,11 @@ public class SampleCrudView extends CssLayout implements View {
     @Override
     public void enter(ViewChangeEvent event) {
         ui = UI.getCurrent();
+        ui.setPollInterval(100);
+        presenter.loadCategoriesAsync().thenAccept(categories -> {
+            getUI().access(() -> form.setCategories(categories));
+        });
+        presenter.requestProducts();
         presenter.enter(event.getParameters());
     }
 
@@ -135,8 +137,10 @@ public class SampleCrudView extends CssLayout implements View {
     }
 
     public void showProductsAsync(Collection<Product> products) {
-        ui.access(() -> grid.setProducts(products));
-        ui.push();
+        ui.access(() -> {
+            grid.setProducts(products);
+            ui.setPollInterval(-1);
+        });
     }
 
     public void refreshProduct(Product product) {

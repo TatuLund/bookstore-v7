@@ -1,13 +1,12 @@
 package com.example.myapplication;
 
-import javax.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.WebServlet;
 
 import com.example.myapplication.samples.MainScreen;
 import com.example.myapplication.samples.authentication.AccessControl;
 import com.example.myapplication.samples.authentication.BasicAccessControl;
 import com.example.myapplication.samples.authentication.LoginScreen;
 import com.example.myapplication.samples.authentication.LoginScreen.LoginListener;
-import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Viewport;
@@ -30,7 +29,6 @@ import com.vaadin.ui.themes.ValoTheme;
  * mobile devices. Instead of device based scaling (default), using responsive
  * layouts.
  */
-@Push //(transport = Transport.WEBSOCKET_XHR)
 @Viewport("user-scalable=no,initial-scale=1.0")
 @Theme("mytheme")
 @Widgetset("com.example.myapplication.MyAppWidgetset")
@@ -110,7 +108,7 @@ public class MyUI extends UI {
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+    @VaadinServletConfiguration(ui = MyUI.class, productionMode = true)
     public static class MyUIServlet extends VaadinServlet {
     }
 }

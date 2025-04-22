@@ -2,7 +2,7 @@ package com.example.myapplication.samples.backend.data;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class Category implements Serializable {
 
