@@ -5,7 +5,7 @@ import java.util.Locale;
 
 import com.example.myapplication.samples.backend.data.Availability;
 import com.example.myapplication.samples.backend.data.Product;
-
+import com.vaadin.addon.contextmenu.GridContextMenu;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.data.util.MethodProperty;
@@ -95,6 +95,16 @@ public class ProductGrid extends Grid {
             }
             return null;
         });
+
+        GridContextMenu menu = new GridContextMenu(this);
+        menu.addGridBodyContextMenuListener(e -> {
+            var item = e.getItemId();
+            menu.removeItems();
+            menu.addItem("Edit", ev -> {
+                select(item);
+            });
+        });
+    
     }
 
     /**

@@ -89,7 +89,6 @@ public class SampleCrudView extends CssLayout implements View {
     @Override
     public void enter(ViewChangeEvent event) {
         ui = UI.getCurrent();
-        ui.setPollInterval(100);
         presenter.loadCategoriesAsync().thenAccept(categories -> {
             getUI().access(() -> form.setCategories(categories));
         });
@@ -139,7 +138,6 @@ public class SampleCrudView extends CssLayout implements View {
     public void showProductsAsync(Collection<Product> products) {
         ui.access(() -> {
             grid.setProducts(products);
-            ui.setPollInterval(-1);
         });
     }
 

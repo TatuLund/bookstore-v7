@@ -79,6 +79,16 @@
 			<version>${vaadin.gwt.version}</version>
 			<scope>provided</scope>
 		</dependency> -->
+		<dependency>
+			<groupId>com.vaadin.addon</groupId>
+			<artifactId>vaadin-charts</artifactId>
+			<version>3.3.4</version>
+		</dependency>
+			<dependency>
+   			<groupId>com.vaadin.addon</groupId>
+   			<artifactId>vaadin-context-menu</artifactId>
+   			<version>0.7.6</version>
+		</dependency>
 	</dependencies>
 
 	<build>

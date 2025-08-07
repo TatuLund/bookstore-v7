@@ -9,4 +9,8 @@
     
 
     
+
+    <inherits name="com.vaadin.addon.charts.Widgetset" />
+
+    <inherits name="com.vaadin.addon.contextmenu.WidgetSet" />
 </module>

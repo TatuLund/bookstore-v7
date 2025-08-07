@@ -2,6 +2,9 @@ package com.example.myapplication.samples.about;
 
 import java.util.Date;
 
+import com.vaadin.addon.charts.Chart;
+import com.vaadin.addon.charts.model.ChartType;
+import com.vaadin.addon.charts.model.DataSeries;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
@@ -28,8 +31,12 @@ public class AboutView extends VerticalLayout implements View {
 
         setSizeFull();
         setStyleName("about-view");
+        Chart chart = new Chart(ChartType.PIE);
+        DataSeries series = new DataSeries();
+        series.setData(20.5, 10.5, 7.5);
+        chart.getConfiguration().addSeries(series);
 
-        addComponents(aboutContent);
+        addComponents(aboutContent, chart);
         setComponentAlignment(aboutContent, Alignment.MIDDLE_CENTER);
     }
 
