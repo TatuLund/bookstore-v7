@@ -11,8 +11,8 @@
 	<name>myapplication-parent</name>
 
 	<properties>
-		<vaadin.version>7.7.47</vaadin.version>
-		<vaadin.plugin.version>7.7.47</vaadin.plugin.version>
+		<vaadin.version>7.7.48</vaadin.version>
+		<vaadin.plugin.version>7.7.48</vaadin.plugin.version>
 		<!-- <jetty.plugin.version>9.4.48.v20220622</jetty.plugin.version> -->
 		<jetty.plugin.version>11.0.14</jetty.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
