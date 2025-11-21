@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
 
 import com.example.myapplication.samples.MainScreen;
@@ -109,7 +110,9 @@ public class MyUI extends UI {
         return accessControl;
     }
 
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true, initParams = {
+            @WebInitParam(name = "org.atmosphere.cpr.AtmosphereConfig.getInitParameter", value = "true"),
+            @WebInitParam(name = "org.atmosphere.websocket.maxIdleTime", value = "300000") })
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = true)
     public static class MyUIServlet extends VaadinServlet {
     }
