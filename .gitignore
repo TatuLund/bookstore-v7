@@ -6,3 +6,6 @@ myapplication-backend/.settings/
 myapplication-production/.settings/
 myapplication-ui/.settings/
 myapplication-widgetset/.settings/
+.eclipse/
+.settings/
+.vscode/
